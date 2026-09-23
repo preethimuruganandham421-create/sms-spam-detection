@@ -4,7 +4,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
 app = Flask(__name__)
 data = pd.read_csv(
-    "sms+spam+collection/SMSSpamCollection",
+       "SMSSpamCollection",
     sep="\t",
     header=None,
     names=["label", "message"]
