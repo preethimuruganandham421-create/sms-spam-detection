@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SMS Spam Detection Platform</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #eef2ff, #f8fafc);
+            min-height: 100vh;
+        }
+
+        .header {
+            background: #111827;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 30px;
+        }
+
+        .header p {
+            margin: 8px 0 0;
+            color: #cbd5e1;
+        }
+
+        .container {
+            width: 700px;
+            max-width: 90%;
+            margin: 50px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        }
+
+        .icon {
+            font-size: 50px;
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+            color: #111827;
+            margin-bottom: 8px;
+        }
+
+        .description {
+            text-align: center;
+            color: #64748b;
+            margin-bottom: 30px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 160px;
+            padding: 18px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 16px;
+            resize: vertical;
+            outline: none;
+        }
+
+        textarea:focus {
+            border-color: #6366f1;
+        }
+
+        button {
+            display: block;
+            margin: 20px auto 0;
+            padding: 14px 35px;
+            border: none;
+            border-radius: 10px;
+            background: #4f46e5;
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #3730a3;
+        }
+
+        .result {
+            margin-top: 30px;
+            padding: 18px;
+            text-align: center;
+            border-radius: 12px;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .info {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 35px;
+            padding-top: 25px;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+        }
+
+        .info div {
+            color: #475569;
+        }
+
+        .info strong {
+            display: block;
+            font-size: 22px;
+            color: #111827;
+            margin-bottom: 5px;
+        }
+
+        footer {
+            text-align: center;
+            color: #64748b;
+            padding-bottom: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>📱 SMS Spam Detection Platform</h1>
+    <p>Machine Learning Based SMS Classification System</p>
+</div>
+
+<div class="container">
+
+    <div class="icon">🛡️</div>
+
+    <h2>Check Your SMS</h2>
+
+    <p class="description">
+        Enter an SMS message below to determine whether it is
+        <b>Spam</b> or <b>Not Spam</b>.
+    </p>
+
+    <form method="POST">
+
+        <textarea
+            name="message"
+            placeholder="Type or paste your SMS message here..."
+            required></textarea>
+
+        <button type="submit">
+            🔍 Analyze SMS
+        </button>
+
+    </form>
+
+    {% if result %}
+        <div class="result">
+            {{ result }}
+        </div>
+    {% endif %}
+
+    <div class="info">
+
+        <div>
+            <strong>96.68%</strong>
+            Accuracy
+        </div>
+
+        <div>
+            <strong>TF-IDF</strong>
+            Text Analysis
+        </div>
+
+        <div>
+            <strong>Naive Bayes</strong>
+            ML Model
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+    SMS Spam Detection Platform | AI & ML Project
+</footer>
+
+</body>
+</html>
